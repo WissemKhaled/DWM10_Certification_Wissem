@@ -14,7 +14,12 @@
           <option value="{{ $material->id}}"> {{ $material->name}}</option>
         @endforeach
       </select>
-
+      <label for="author[]"> Créateur :</label>
+    	<select id="authors" multiple class="" name="author[]">
+    		@foreach($authors as $author)
+    			<option value="{{ $author->id }}">{{ $author->lastname }}</option>
+    		@endforeach
+    	</select>
       <label for="stock"> Stock :</label>
       <input id="stock" type="number" name="stock" >
 

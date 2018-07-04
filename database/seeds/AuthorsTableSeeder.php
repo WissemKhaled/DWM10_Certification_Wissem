@@ -20,6 +20,9 @@ class AuthorsTableSeeder extends Seeder
         ],
         [
           'lastname' => 'Jack',
+        ],
+        [
+          'lastname' => 'Morgan',
         ]
       ]);
     }

@@ -20,6 +20,12 @@
     			@endif
     		@endforeach
     	</select>
+			<label for="author[]"> Genre :</label>
+    	<select id="authors" multiple class="" name="author[]">
+    		@foreach($authors as $author)
+    			<option value="{{ $author->id }}">{{ $author->lastname }}</option>
+    		@endforeach
+    	</select>
 			<input id="stock" type="number" class ="hidden" name="stock" selected value="{{ $instru->stock }}">
 
 		<input type="submit" name="" value="Editer">
