@@ -6,8 +6,8 @@
       <ul>
         <li>Nom : {{ $instru->title }}</li>
         <li>Prix : {{ $instru->price }}</li>
-        @foreach ($instru->authors as $gaythor)
-          <li> Genre :{{ $author->lastname}}</li>
+        @foreach ($instru->authors as $author)
+          <li> Créateur :{{ $author->lastname}}</li>
         @endforeach
         <li> Composant :{{ $instru->materials->name }}</li>
         <li> En Stock :{{ $instru->stock }}

@@ -13,9 +13,10 @@ class DatabaseSeeder extends Seeder
     {
       $this->call([
           AuthorsTableSeeder::class,
-          Instru_AuthorTableSeeder::class,
+        //  Instru_AuthorTableSeeder::class,
           InstrusTableSeeder::class,
           MaterialsTableSeeder::class,
+          Author_InstruTableSeeder::class,
       ]);
     }
 }

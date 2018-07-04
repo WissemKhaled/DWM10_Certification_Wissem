@@ -11,6 +11,7 @@ class InstruController extends Controller
 {
     public function showAll(Request $request)
     {
+      $instru = Instru::all()->sortBy('title');
       return view('instrument.show', ['instrus' => Instru::all()]);
     }
 

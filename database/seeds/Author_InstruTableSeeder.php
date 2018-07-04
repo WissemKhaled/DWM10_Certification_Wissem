@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Seeder;
 
-class Instru_AuthorTableSeeder extends Seeder
+class Author_InstruTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -11,7 +11,7 @@ class Instru_AuthorTableSeeder extends Seeder
      */
     public function run()
     {
-      DB::table('instru_author')->insert([
+      DB::table('author_instru')->insert([
       [
         'author_id' => 1,
         'instru_id' => 1,
@@ -25,7 +25,7 @@ class Instru_AuthorTableSeeder extends Seeder
         'instru_id' => 3,
       ],
       [
-          'author_id' => 1,
+          'author_id' => 2,
           'instru_id' => 4,
       ],
       [
