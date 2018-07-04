@@ -3,7 +3,7 @@
 	<form class="" action="/stock" method="post">
 		@csrf
 		<input type="hidden" name="id" value="{{ $instru->id }}">
-    <label for="stock"> Prix : </label>
+    <label for="stock"> Stock : </label>
 		<input id="stock" type="number" name="stock" value="{{ $instru->stock }}">
 
 

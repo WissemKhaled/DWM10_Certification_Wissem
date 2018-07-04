@@ -10,4 +10,9 @@ class Instru extends Model
   {
      return $this->belongsTo('App\Material');
    }
+
+   public function authors()
+   {
+     return $this->belongsToMany('App\Author');
+   }
 }

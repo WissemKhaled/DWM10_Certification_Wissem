@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Instru as Instru;
 use App\Material as Material;
+use App\Author as Author;
 
 class InstruController extends Controller
 {
