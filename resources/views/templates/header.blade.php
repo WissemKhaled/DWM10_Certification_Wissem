@@ -8,6 +8,10 @@
   </head>
   <body>
     <header>
-      Je suis le header
-      <a href="/"> Retour à l'inventaire </a>
+      <h1>Centre de Gestion de l'inventaire</h1>
+      <div>
+        <a href="/"><input type="button" name="" class="button" value="Retour à l'inventaire"></a>
+        <a href="/insert"><input type="button" name="" class="button" value="Ajout"></a>
+        <input id="switch" data-action="night" type="button" name="switch" class="button" value="Mode Nuit">
+      </div>
     </header>
