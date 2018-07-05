@@ -5,11 +5,13 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Instru as Instru;
 use App\Material as Material;
+use App\Author as Author;
 
 class InstruController extends Controller
 {
     public function showAll(Request $request)
     {
+      $instru = Instru::all()->sortBy('title');
       return view('instrument.show', ['instrus' => Instru::all()]);
     }
 
@@ -17,7 +19,8 @@ class InstruController extends Controller
     {
 
       $materials = Material::all();
-      return view('instrument.insert', ['materials' => $materials]);
+      $authors = Author::all();
+      return view('instrument.insert', ['materials' => $materials], ['authors' => $authors]);
     }
 
     public function insertOne(Request $request)
@@ -29,6 +32,9 @@ class InstruController extends Controller
       $instru->materials_id = $request->input('material');
       $instru->stock = $request->input('stock');
       $instru->save();
+      foreach ($request->input('author') as $key => $value) {
+    		$instru->authors()->attach($value);
+    	}
       return redirect('/');
     }
 
@@ -45,7 +51,8 @@ class InstruController extends Controller
 
       $instru = Instru::find($request->input('id'));
       $materials = Material::all();
-    	return view('instrument.update', ['instru' => $instru, 'materials' => $materials]);
+      $authors = Author::all();
+    	return view('instrument.update', ['instru' => $instru, 'materials' => $materials], ['authors' => $authors]);
     }
 
     public function updateOne(Request $request)
@@ -56,10 +63,10 @@ class InstruController extends Controller
       $instru->stock = $request->input('stock');
       $instru->materials_id = $request->input('material');
       $instru->save();
-      /*$instru->genres()->detach();
-      foreach ($request->input('genre') as $key => $value) {
-        $instru->genres()->attach($value);
-      }*/
+      $instru->authors()->detach();
+    	foreach ($request->input('author') as $key => $value) {
+    		$instru->authors()->attach($value);
+    	}
       return redirect('/');
     }
 
