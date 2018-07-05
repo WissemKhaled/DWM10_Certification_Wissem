@@ -9,7 +9,7 @@
 
 ##Annotations :
 
-- la compilation du Less n'a pas été fait. Il est recommandé de lancer "npm run watch-doll"
+- la compilation du Less a été fait. N'étant pas sûr que cela puisse avoir bien fonctionné, je croise les doigts
 
 ##Points Négatifs :
 
